@@ -17,4 +17,4 @@ jobs:
           script: |
             cd /var/git/nextjs_vps_test/
             git pull
-            cp -r /var/git/nextjs_vps_test/app/* /home/github-user/project/nextjs_vps_test
+            cp -r /var/git/nextjs_vps_test/* /home/github-user/project/nextjs_vps_test
