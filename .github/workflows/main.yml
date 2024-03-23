@@ -12,7 +12,7 @@ jobs:
         with:
           key: ${{ secrets.XSERVER_VPS_SSH_KEY }}
           host: ${{ secrets.XSERVER_VPS_HOST_NAME }}
-          username: ${{ secrets.SSH_USER }}
+          username: ${{ secrets.XSERVER_VPS_SSH_USER }}
           port: ${{ secrets.XSERVER_VPS_SSH_PORT }}
           script: |
             cd /var/git/nextjs_vps_test/
