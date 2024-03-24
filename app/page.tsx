@@ -10,7 +10,7 @@ export default function Home() {
           <code className={styles.code}>app/page.tsx</code>
         </p>
         <p>
-          V0.0.20
+          V0.0.21
         </p>
         <div>
           <a
