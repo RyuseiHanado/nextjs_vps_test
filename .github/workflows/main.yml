@@ -17,4 +17,4 @@ jobs:
           script: |
             cd /var/git/nextjs_vps_test/
             git pull
-            sudo cp -r /var/git/nextjs_vps_test/* /home/dev-user/docker/test-nextjs/src
+            sudo cp -r /var/git/nextjs_vps_test/* /home/dev-user/project/test-nextjs
