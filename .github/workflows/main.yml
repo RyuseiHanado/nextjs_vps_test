@@ -21,4 +21,4 @@ jobs:
             cd /home/dev/projects/nextjs_vps_test
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            npm -v
+            npm --help
