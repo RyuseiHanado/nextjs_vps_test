@@ -19,4 +19,6 @@ jobs:
             git pull
             cp -r /var/git/nextjs_vps_test/* /home/dev/projects/nextjs_vps_test
             cd /home/dev/projects/nextjs_vps_test
-            npm install
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            npm -v
