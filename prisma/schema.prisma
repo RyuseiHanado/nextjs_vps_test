@@ -13,4 +13,5 @@ model Account {
   email String
   v38 String
   v39 String
+  v40 String
 }
