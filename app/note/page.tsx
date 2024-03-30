@@ -54,14 +54,14 @@ export default function Home() {
 
     const columns: ColumnsType<DataType> = [
         {
-            title: 'created_at',
+            title: '作成日時',
             dataIndex: 'createdAt',
             width: '20%',
             render: (date: Date) => new Date(date).toLocaleDateString(),
             sorter: (a, b) => Date.parse(a.createdAt) - Date.parse(b.createdAt),
         },
         {
-            title: 'content',
+            title: '内容',
             dataIndex: 'content',
             width: '75%',
         },
@@ -69,7 +69,7 @@ export default function Home() {
             width: '5%',
             render: (record: DataType) => (
                 <Button danger onClick={() => handleDeleteClick(record.id)}>
-                    Delete
+                    削除
                 </Button>
             ),
         },
@@ -84,18 +84,18 @@ export default function Home() {
 
     return (
         <div style={centeredStyle}>
-            <Card title='Note' style={{ width: 800 }}>
+            <Card title='ノート' style={{ width: 800 }}>
                 <Row>
                     <Col span={16}>
                         <Input
-                            placeholder='content'
+                            placeholder='内容を記述'
                             value={content}
                             onChange={handleInputChange}
                         />
                     </Col>
                     <Col span={7} offset={1}>
                         <Button type='primary' onClick={handleSaveClick}>
-                            Save
+                            保存
                         </Button>
                     </Col>
                 </Row>
