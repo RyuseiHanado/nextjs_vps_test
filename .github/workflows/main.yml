@@ -21,3 +21,5 @@ jobs:
             cd /home/dev/projects/nextjs_vps_test
             source ~/.bash_profile
             npm install
+            npm un build
+            pm2 restart 6
