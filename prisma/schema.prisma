@@ -7,11 +7,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Account {
-  id                String  @id @default(cuid())
-  userId            String
-  email String
-  v38 String
-  v39 String
-  v40 String
+model notes {
+  id        Int      @id @default(autoincrement())
+  content   String
+  createdAt DateTime @default(now())
 }
