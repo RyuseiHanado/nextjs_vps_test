@@ -3,7 +3,7 @@ name: nextjs_vps_test
 services:
     rds:
         image: postgres
-        container_name: rdb
+        container_name: db
         ports:
             - '5432:5432'
         environment:
