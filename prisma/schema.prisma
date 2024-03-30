@@ -11,4 +11,5 @@ model Account {
   id                String  @id @default(cuid())
   userId            String
   email String
+  v38 String
 }
