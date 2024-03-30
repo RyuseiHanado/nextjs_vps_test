@@ -18,3 +18,5 @@ jobs:
             cd /var/git/nextjs_vps_test/
             git pull
             cp -r /var/git/nextjs_vps_test/* /home/dev/projects/nextjs_vps_test
+            cd /home/dev/projects/nextjs_vps_test
+            npm install
