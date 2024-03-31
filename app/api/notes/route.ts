@@ -1,5 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import {NextRequest, NextResponse} from 'next/server';
+import {PrismaClient} from '@prisma/client';
+import {getFileList, uploadImage} from "@/app/repository/ImageRepository";
 
 const prisma = new PrismaClient();
 
@@ -9,13 +10,17 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-    const { content } = await request.json();
+    const formData = await request.formData();
+    const content = formData.get('content') as string
+    const image = formData.get('image') as File
 
-    await prisma.notes.create({
+    const res = await prisma.notes.create({
         data: {
             content: content,
         },
     });
+
+    if (image) await uploadImage(image, res.id);
 
     const notes = await getAllNotes();
     return NextResponse.json(notes);
@@ -36,5 +41,12 @@ export async function DELETE(request: NextRequest) {
 
 async function getAllNotes() {
     const notes = await prisma.notes.findMany();
-    return notes;
+    return await Promise.all(notes.map(async note => {
+        let imageKey: string | null = null
+        const res = await getFileList(note.id)
+        if (res) {
+            imageKey = res[0].Key!
+        }
+        return {...note, imageKey}
+    }));
 }
